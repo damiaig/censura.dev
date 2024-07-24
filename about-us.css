@@ -1,0 +1,352 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Neue', sans-serif;
+}
+
+/* Header Styles */
+.header-container {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12.5px;
+    position: relative;
+}
+
+.title {
+    letter-spacing: 2px;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    font-size: 24px;
+}
+
+.nav-container {
+    margin-left: auto;
+    position: relative;
+}
+
+.toolbar-container {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Added shadow */
+}
+
+.toolbar {
+    font-size: 14px;
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+    color: black;
+}
+
+.toolbar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.5s ease;
+}
+
+.toolbar:hover::after {
+    width: 100%;
+}
+
+.toolbar:hover {
+    color: black;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) and (max-height: 1366px) {
+    .header-container {
+        padding: 25px 55px; /* Increased padding for tablet view */
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .toolbar-container {
+        display: none; /* Hide the toolbar container */
+    }
+    
+    .menu-button {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        color: black; /* Make the menu button gold */
+        cursor: pointer;
+        position: fixed; /* Fixed position to the left of the screen */
+        left: 20px; /* Position the menu button on the left */
+        top: 5px; /* Adjust this value to move the menu button higher */
+    }
+
+    .menu-button:focus + .toolbar-container,
+    .menu-button:hover + .toolbar-container,
+    .toolbar-container:hover {
+        display: flex;
+        flex-direction: column;
+        position: fixed; /* Fixed position to the left of the screen */
+        top: 30px; /* Adjust this value to move the toolbar container higher */
+        left: 20px;
+        background: white;
+        padding: 20px;
+        gap: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add a box shadow */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+    .toolbar-container li {
+        display: block;
+    }
+
+    .toolbar-container a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .toolbar-container a:hover {
+        color: black;
+    }
+
+    .box-left, .box-right {
+        text-align: center; /* Center text for mobile view */
+        border: none; /* Remove borders */
+    }
+
+    .box-left h2, .box-right h2 {
+        margin-bottom: 15px; /* Added bottom margin for h2 in media queries */
+    }
+
+    .box-left p, .box-right p {
+        margin: 0; /* Remove margins for p elements */
+    }
+}
+
+@media (min-width: 1025px) {
+    .toolbar-container {
+        display: flex !important; /* Ensure toolbar is visible */
+    }
+
+    .menu-button {
+        display: none; /* Hide the menu button */
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    /* Larger tablet viewport styles */
+    .box-left, .box-right {
+        text-align: center; /* Center text for larger tablets */
+        border: none; /* Remove borders */
+    }
+
+    .box-left h2, .box-right h2 {
+        margin-bottom: 15px; /* Ensure bottom margin for h2 */
+    }
+
+    .box-left p, .box-right p {
+        margin: 0; /* Remove margins for p elements */
+    }
+}
+
+/* Section Styles */
+.box1 {
+    background-color: #C0CDEC;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+}
+
+.box2 {
+    background-color: #ABC4EB;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.box3 {
+    background-color: #7174B9;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.about1, .about2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.img-container, .text-container, .text-container2, .img-container2 {
+    flex: 1;
+    padding: 10px; /* Reduced padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img2 {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.text-container, .text-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Ensures text is centered */
+}
+
+.text-container h1, .text-container2 h1 {
+    margin-bottom: 10px;
+}
+
+.text-container p, .text-container2 p {
+    line-height: 1.6;
+}
+
+/* Service Box Styles */
+.box-left, .box-right {
+    padding: 20px;
+    width: 100%; /* Full width for responsive design */
+    box-sizing: border-box;
+    background-color: #7174B9; /* Background color to match the 'Our Services' section */
+    color: white; /* Text color */
+    margin: -30px 0; /* Margin for spacing between boxes */
+}
+
+.box-left {
+    border-right: 1.5px solid gray; /* Border on the right side */
+    text-align: left; /* Align text to the left */
+}
+
+.box-right {
+    border-left: 1.5px solid gray; /* Border on the left side */
+    text-align: right; /* Align text to the right */
+}
+
+.box-left h2, .box-right h2 {
+    color: white;
+}
+
+.box-left h2 {
+    margin-left: 90px;
+    margin-right: 570px;
+    margin-bottom: 15px;
+}
+
+.box-right h2 {
+  
+    margin-right: 90px;
+    margin-left: 500px;
+    margin-bottom: 15px;
+}
+
+.box-left p {
+    text-align: center;
+
+    margin-right: 700px;
+    margin-left: 100px;
+}
+
+.box-right p {
+    margin-left: 650px;
+    margin-right: 100px;
+}
+
+h2 {
+    color: white;
+    margin: 20px 0;
+    margin-left: 50px;
+}
+
+.h0 {
+    margin-left: 100px; /* Adjusted to move back to the left */
+}
+
+.h6 {
+    color: white;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1080px) {
+    .about1, .about2 {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 0px; /* Reduced space between sections */
+    }
+
+    .p5 {
+        margin: 15px 20px 30px 20px; /* Adjusted margins for smaller screens */
+    }
+
+    .box-left, .box-right {
+        margin: 20px 0; /* Margin for spacing between boxes */
+
+        text-align: center; /* Center text for smaller screens */
+        border: none; /* Remove borders for smaller screens */
+    }
+
+    .box-left h2, .box-right h2 {
+        margin-bottom: 15px; /* Ensure bottom margin for h2 */
+    }
+    .box-left p{
+        margin-right: 300px;
+    }
+
+.box-right p {
+ margin-left: 300px;
+    }
+}       
+
+@media (max-width: 830px) {
+    .about1, .about2 {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 0px; /* Reduced space between sections */
+    }
+
+    .p5 {
+        margin: 15px 10px 30px 10px; /* Adjusted margins for smaller screens */
+    }
+
+    .box-left, .box-right {
+        margin: 20px 0; /* Margin for spacing between boxes */
+
+        text-align: center; /* Center text for smaller screens */
+        border: none; /* Remove borders for smaller screens */
+    }
+
+    .box-left h2, .box-right h2 {
+        margin: 0; /* Ensure no extra margin */
+        text-align: center; /* Center text */
+    }
+
+    .box-left p, .box-right p {
+        margin: 0; /* Remove margins for p elements */
+        text-align: center; /* Center text */
+    }
+}

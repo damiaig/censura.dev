@@ -1,0 +1,287 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Neue', sans-serif;
+}
+
+html, body {
+    height: 120%; /* Ensure body height is set to 100% */
+    margin: 0;
+}
+
+/* Body styling */
+body {
+    background: linear-gradient(45deg, #07080a, #3c5382, #173751); /* Darker blue gradient background */
+    color: #fff;
+    height: 100%; /* Ensure body height is 100% of viewport */
+    overflow: auto; /* Allow scrolling */
+    position: relative;
+}
+
+/* Header Styling */
+.header-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12.5px;
+    position: relative;
+    z-index: 10;
+}
+
+.title {
+    letter-spacing: 2px;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    font-size: 24px;
+}
+
+.nav-container {
+    margin-left: auto;
+    position: relative;
+}
+
+.toolbar-container {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toolbar {
+    font-size: 14px;
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+    color: black;
+}
+
+.toolbar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.5s ease;
+}
+
+.toolbar:hover::after {
+    width: 100%;
+}
+
+.toolbar:hover {
+    color: black;
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 25px 55px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .toolbar-container {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        color: black;
+        cursor: pointer;
+        position: fixed;
+        left: 20px;
+        top: 5px;
+    }
+
+    .menu-button:focus + .toolbar-container,
+    .menu-button:hover + .toolbar-container,
+    .toolbar-container:hover {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 30px;
+        left: 20px;
+        background: white;
+        padding: 20px;
+        gap: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+
+    .toolbar-container li {
+        display: block;
+    }
+
+    .toolbar-container a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .toolbar-container a:hover {
+        color: black;
+    }
+}
+
+/* Keep toolbar visible on larger screens (laptops, desktops) */
+@media (min-width: 1025px) {
+    .toolbar-container {
+        display: flex !important;
+    }
+
+    .menu-button {
+        display: none;
+    }
+}
+
+/* Contact Box Styles */
+.contactbox {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the left */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0.2, 0.2, 0.2, 0.2);
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: left; /* Ensure text alignment is left */
+    position: relative; /* Ensure it appears above the star background */
+    z-index: 10; /* Ensure it appears above the star background */
+    margin-bottom: 60px; /* Space for expansion */
+}
+
+.contactbox h1,
+.contactbox h2 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.tit1 {
+    align-self: center; /* Ensures the element is centered within its flex container */
+    margin-top: 17px;
+    margin-bottom: 27px;
+    text-align: center; /* Centers text inside the h1 element */
+    width: 100%; /* Ensures the h1 takes full width of its container, allowing for proper centering */
+}
+
+.contactbox h2 {
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+/* Country Code Container */
+.country-code-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+}
+
+.country-code-input,
+.phone-number-input,
+.text1,
+.email,
+.message,
+.website-select {
+    width: 100%; /* Make all inputs the same width */
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.country-code-input {
+    flex: 1;
+    border-radius: 5px 0 0 5px;
+}
+
+.phone-number-input {
+    flex: 2;
+    border-radius: 0 5px 5px 0;
+}
+
+.country-code-input:focus,
+.phone-number-input:focus,
+.text1:focus,
+.email:focus,
+.message:focus,
+.website-select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.country-code-input::placeholder,
+.phone-number-input::placeholder,
+.email::placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+.country-code-label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 0 5px;
+    color: #888;
+    font-size: 1em;
+    pointer-events: none;
+}
+
+.submit-button {
+    align-self: center;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #f0f0f0;
+}
+
+.thank-you {
+    font-size: 1.2em;
+    color: black;
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .contactbox {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactbox {
+        max-width: 250px;
+    }
+}
+
