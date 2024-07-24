@@ -104,6 +104,34 @@
             box-shadow: 0 0 10px red;
         }
 
+/* Styling for the input field and datalist */
+input[list] {
+    font-size: 16px; /* Adjust font size for better visibility */
+    padding: 10px; /* Add padding for better spacing */
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+/* Adjust datalist appearance */
+datalist {
+    font-size: 16px; /* Ensure font size is appropriate */
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+    input[list] {
+        font-size: 18px; /* Increase font size for readability */
+        padding-right: 50px; /* Adjust padding for better appearance */
+    }
+    select {
+        font-size: 18px;
+        padding-right: 50px;
+        background-size: 24px;
+    }
+}
+
+
+
         .message {
             box-shadow: none; /* No glowing effect for message field */
         }
