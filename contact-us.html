@@ -52,30 +52,31 @@
 
         /* Form Styling */
         .error {
-            border: 2px solid transparent;
+            border: 2px solid red;
             box-shadow: 0 0 10px red; /* Glowing effect */
         }
 
-
-        .error {
-            border: 2px solid red;
-            box-shadow: 0 0 5px red;
-        }
         .glow {
-            box-shadow: 0 0 10px yellow;
+            border: 2px solid red;
+            box-shadow: 0 0 10px red; /* Glowing effect for email, website select, and country code */
         }
+
         .error-message {
             color: red;
+            font-size: 0.875em;
+            margin-top: 0.25em;
             display: none;
         }
-     
+
         input, select {
             border: 2px solid black;
             box-shadow: none;
         }
+
         select:focus, input:focus {
             border-color: black;
         }
+
         /* Style for larger select dropdown arrow */
         select {
             -webkit-appearance: none;
@@ -84,60 +85,28 @@
             background: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
             padding-right: 40px;
         }
+
         /* For mobile devices */
         @media (max-width: 600px) {
-            select {
+            input[list], select {
                 font-size: 18px;
                 padding-right: 50px;
                 background-size: 24px;
             }
         }
-        .error-message {
-            color: red;
-            font-size: 0.875em;
-            margin-top: 0.25em;
-            display: none;
+
+        /* Styling for the input field and datalist */
+        input[list] {
+            font-size: 16px; /* Adjust font size for better visibility */
+            padding: 10px; /* Add padding for better spacing */
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 100%; /* Ensure full width */
         }
 
-        .glow {
-            border: 2px solid red;
-            box-shadow: 0 0 10px red;
-        }
-
-/* Styling for the input field and datalist */
-input[list] {
-    font-size: 16px; /* Adjust font size for better visibility */
-    padding: 10px; /* Add padding for better spacing */
-    border: 2px solid black;
-    border-radius: 5px;
-}
-
-/* Adjust datalist appearance */
-datalist {
-    font-size: 16px; /* Ensure font size is appropriate */
-}
-
-/* For mobile devices */
-@media (max-width: 600px) {
-    input[list] {
-        font-size: 18px; /* Increase font size for readability */
-        padding-right: 50px; /* Adjust padding for better appearance */
-    }
-    select {
-        font-size: 18px;
-        padding-right: 50px;
-        background-size: 24px;
-    }
-}
-
-
-
-        .message {
-            box-shadow: none; /* No glowing effect for message field */
-        }
-
-        .email.glow, .website-select.glow, .country-code-input.glow {
-            box-shadow: 0 0 10px red; /* Glowing effect for email, website select, and country code */
+        /* Adjust datalist appearance */
+        datalist {
+            font-size: 16px; /* Ensure font size is appropriate */
         }
     </style>
 </head>
@@ -162,9 +131,10 @@ datalist {
         <input type="text" id="name" name="name" class="text1" placeholder="Type here" oninput="validateForm()">
         <div class="error-message" id="name-error">Please enter your name.</div>
  
-            <h2 class="h2">Country Code</h2>
-            <input list="country-codes" id="country-code" name="country-code" class="country-code-input" placeholder="Select country code" onchange="updatePhoneNumber()">
-             <datalist id="country-codes">
+        <h2 class="h2">Country Code</h2>
+        <label for="country-code" class="visually-hidden">Select country code</label>
+        <input list="country-codes" id="country-code" name="country-code" class="country-code-input" placeholder="Select country code" onchange="updatePhoneNumber()">
+        <datalist id="country-codes">
             <!-- Include all the country codes here -->
             <option value="+1">United States (+1)</option>
             <option value="+44">United Kingdom (+44)</option>
