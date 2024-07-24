@@ -56,6 +56,42 @@
             box-shadow: 0 0 10px red; /* Glowing effect */
         }
 
+
+        .error {
+            border: 2px solid red;
+            box-shadow: 0 0 5px red;
+        }
+        .glow {
+            box-shadow: 0 0 10px yellow;
+        }
+        .error-message {
+            color: red;
+            display: none;
+        }
+     
+        input, select {
+            border: 2px solid black;
+            box-shadow: none;
+        }
+        select:focus, input:focus {
+            border-color: black;
+        }
+        /* Style for larger select dropdown arrow */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+            padding-right: 40px;
+        }
+        /* For mobile devices */
+        @media (max-width: 600px) {
+            select {
+                font-size: 18px;
+                padding-right: 50px;
+                background-size: 24px;
+            }
+        }
         .error-message {
             color: red;
             font-size: 0.875em;
