@@ -127,7 +127,7 @@ body {
         gap: 8px; /* Reduced gap between items */
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         border-radius: 5px;
-        z-index: 1000; /* Ensure it appears above other elements */
+        z-index: 2; /* Ensure it appears above other elements */
         max-height: 80vh; /* Limit the height to avoid overlapping */
         overflow-y: auto; /* Allow scrolling if content overflows */
     }
@@ -172,7 +172,7 @@ body {
     width: 100%;
     text-align: left; /* Ensure text alignment is left */
     position: relative; /* Ensure it appears above the star background */
-    z-index: 5; /* Ensure it appears above the star background */
+    z-index: 0; /* Ensure it appears below the toolbar */
     margin-bottom: 60px; /* Space for expansion */
 }
 
@@ -286,19 +286,30 @@ body {
 @media (max-width: 768px) {
     .contactbox {
         max-width: 300px;
+        z-index: 0; /* Ensure it appears below the toolbar */
     }
 
     .tit1 {
-        margin-top: 29px; /* Added 12px to original margin-top for mobile view */
+        margin-top: 29px; /* Added 12px to original margin-top */
+    }
+
+    .toolbar-container {
+        z-index: 2; /* Ensure it appears above the form */
     }
 }
 
+/* Media query for mobile */
 @media (max-width: 480px) {
     .contactbox {
         max-width: 250px;
+        z-index: 0; /* Ensure it appears below the toolbar */
     }
 
     .tit1 {
-        margin-top: 29px; /* Added 12px to original margin-top for mobile view */
+        margin-top: 29px; /* Added 12px to original margin-top */
+    }
+
+    .toolbar-container {
+        z-index: 2; /* Ensure it appears above the form */
     }
 }
