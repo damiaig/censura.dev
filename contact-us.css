@@ -51,6 +51,8 @@ body {
     gap: 20px;
     list-style-type: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 20; /* Ensure it appears above other elements */
+    background: white; /* Ensure the toolbar has a background color */
 }
 
 .toolbar {
@@ -170,7 +172,7 @@ body {
     width: 100%;
     text-align: left; /* Ensure text alignment is left */
     position: relative; /* Ensure it appears above the star background */
-    z-index: 10; /* Ensure it appears above the star background */
+    z-index: 5; /* Ensure it appears above the star background */
     margin-bottom: 60px; /* Space for expansion */
 }
 
