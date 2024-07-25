@@ -184,7 +184,7 @@ body {
 
 .tit1 {
     align-self: center; /* Ensures the element is centered within its flex container */
-    margin-top: 17px;
+    margin-top: 29px; /* Added 12px to original margin-top */
     margin-bottom: 27px;
     text-align: center; /* Centers text inside the h1 element */
     width: 100%; /* Ensures the h1 takes full width of its container, allowing for proper centering */
@@ -287,11 +287,18 @@ body {
     .contactbox {
         max-width: 300px;
     }
+
+    .tit1 {
+        margin-top: 29px; /* Added 12px to original margin-top for mobile view */
+    }
 }
 
 @media (max-width: 480px) {
     .contactbox {
         max-width: 250px;
     }
-}
 
+    .tit1 {
+        margin-top: 29px; /* Added 12px to original margin-top for mobile view */
+    }
+}
